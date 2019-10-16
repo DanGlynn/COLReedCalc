@@ -788,28 +788,29 @@ const
         border: '2px solid #c299ff',
         borderRadius: 5,
         marginRight: 0,
-        marginTop:3
+        marginTop:3,
+        display: 'flex',
+        direction: 'ltr'
+
 },
       unit = {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'rowReverse',
         flexWrap: 'nowrap',
-        justifyContent: 'spaceEvenly',
+        justifyContent: 'flexStart',
         alignItems: 'baseline',
         borderTop: '2px solid black',
         borderRight: '2px solid black',
         borderLeft: '2px solid black',
-        paddingTop: 0,
-        paddingLeft: 10,
         backgroundColor: '#f0e6ff',
         maxWidth: '220px',
         minWidth: '220px',
-        height: 24,
+        height: 28,
         textAlign: 'right',
-        direction: 'ltr',
+        direction: 'rtl',
         fontSize: 14,
         boxSizing: 'borderBox',
-        lineHeight: 1.5
+        lineHeight: .000001
       },
 
 unit2 = {
@@ -826,7 +827,7 @@ unit2 = {
         backgroundColor: 'white',
         maxWidth: '220px',
         minWidth: '220px',
-        height: 24,
+        height: 28,
         direction: 'rtl',
         fontSize: 14,
         fontFamily: "Raleway",
@@ -847,7 +848,7 @@ unit2 = {
         backgroundColor: '#ffffcc',
         maxWidth: '220px',
         minWidth: '220px',
-        height: 24,
+        height: 28,
         direction: 'rtl',
         fontSize: 14,
         fontFamily: "Raleway",
@@ -870,7 +871,7 @@ unit2 = {
         backgroundColor: '#b3ffb3',
         maxWidth: '220px',
         minWidth: '220px',
-        height: 24,
+        height: 28,
         direction: 'rtl',
         fontSize: 14,
         fontFamily: "Raleway",
@@ -1003,7 +1004,7 @@ class ControlledInput extends React.Component {
       <div>
          <div style={unit}>
           <div style={sText}>Cost of pound of Cane:</div>
-           &nbsp;&nbsp;$&nbsp;<input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={5} />
+           &nbsp;&nbsp;$&nbsp;<input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={6} />
          </div>
          <div style={unit}>
           <div style={sText}>Reeds per Pound of Cane:</div>
@@ -1015,7 +1016,7 @@ class ControlledInput extends React.Component {
          </div>
          <div style={unit}>
           <div style={sText}>Spool of Thread Cost:</div>
-          &nbsp;&nbsp;$&nbsp;<input value={this.state.input3} onChange={this.threadCost} style={inputBox} size={5} />
+          &nbsp;&nbsp;$&nbsp;<input value={this.state.input3} onChange={this.threadCost} style={inputBox} size={6} />
          </div>
          <div style={unit}>
           <div style={sText}>Reeds per Spool:</div>
@@ -1027,7 +1028,7 @@ class ControlledInput extends React.Component {
         </div>
         <div style={unit}>
           <div style={sText}>Cost of One Reed Knife:</div>
-          &nbsp;&nbsp;$&nbsp;<input value={this.state.input5} onChange={this.knifeCost} style={inputBox} size={5} />
+          &nbsp;&nbsp;$&nbsp;<input value={this.state.input5} onChange={this.knifeCost} style={inputBox} size={6} />
         </div>
         <div style={unit}>
           <div style={sText}>Life of Knife (in Reeds):</div>
@@ -1039,15 +1040,15 @@ class ControlledInput extends React.Component {
         </div>
         <div style={unit}>
           <div style={sText}>Cost of Staple:</div>
-          &nbsp;&nbsp;$&nbsp;<input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={5} />
+          &nbsp;&nbsp;$&nbsp;<input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={6} />
         </div>
         <div style={unit}>
           <div style={tText}>Gouger Blade Replacement:</div>
-          &nbsp;&nbsp;$&nbsp;<input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={6} />
+          &nbsp;&nbsp;$&nbsp;<input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={5} />
         </div>
         <div style={unit}>
-          <div style={sText}>Gouger Blade Life (in Reeds):</div>
-          &nbsp;<input value={this.state.input9} onChange={this.gougerLife} style={inputBox} size={5} />
+          <div style={tText}>Gouger Blade Life (in Reeds):</div>
+          &nbsp;<input value={this.state.input9} onChange={this.gougerLife} style={inputBox} size={4} />
         </div>
         <div style={unit2}>
           <div style={answerText}>${gougerPerReed}</div>
@@ -1060,7 +1061,7 @@ class ControlledInput extends React.Component {
         </div>
         <div style={unit}>
           <div style={sText}>Your Hourly Wage:</div>
-          &nbsp;&nbsp;$&nbsp;<input value={this.state.input11} onChange={this.hourlyWage} style={inputBox} size={4} />
+          &nbsp;&nbsp;$&nbsp;<input value={this.state.input11} onChange={this.hourlyWage} style={inputBox} size={5} />
         </div>
         <div style={unit2}>
            &nbsp;<div style={answerText}>${laborPerReed}</div>
@@ -1068,7 +1069,7 @@ class ControlledInput extends React.Component {
         </div>
         <div style={unit3}>
 
-     <div style={answerText}>${totalWithoutLabor}</div><div style={sText}>&nbsp;:Materials Cost (w/o Labor)</div>
+     <div style={answerText}>${totalWithoutLabor}</div><div style={tText}>&nbsp;:Materials Cost (w/o Labor)</div>
         </div>
         <div style={unit4}>
           <div style={answerText}>${totalWithLabor}</div>
