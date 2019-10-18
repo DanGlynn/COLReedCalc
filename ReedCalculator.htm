@@ -87,6 +87,45 @@ display:flex;
 width:20%;
 height:auto;
 }
+#reedCalc {
+  margin-top:40px;
+  margin-bottom:40px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: #47476b;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 15 15;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  cursor: pointer;
+  font-size: 16px;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #47476b transparent transparent transparent;
+}
 
 body {
   background-image: url("https://chicagooboelessons.com/COLbackground1.jpg");
@@ -752,11 +791,25 @@ iframe {
         <h4>by Daniel Glynn</h4>
 
         <div id="inner-tab-container" style="padding-bottom:5vh;">
-          <h6 class="tab">With a plastic <a href="https://amzn.to/2VMrL1D" target="_blank" style="cursor: pointer;"><b>Legere Oboe Reed</a></b> now selling for $118, one might begin trying to assess the value of an oboe reed. Assuming the Legere Reed would last several months, it is relatively cheaper or more expensive than the alternative of several months of wooden oboe reeds. In order to answer this question, by breaking down the individual costs behind each step of the reed-making process, we take a critical look at just how much a professional oboist is spending on producing a reed of similar quality.</h6>
+          <h6 class="tab">With the
+            <div class="tooltip">
+              <span class="tooltiptext">Paid Link to Amazon</span>
+            <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Legere Oboe Reed</b></a>
+            </div>
+             now available as a high quality synthetic reed option, professional oboists all around the globe need to assess <div class="tooltip">
+               <span class="tooltiptext">Paid Link to Amazon</span>
+             <a href="https://amzn.to/2VMrL1D" target="_blank"><b>$118 price point.</b></a>
+             </div>
+             In order to provide an assessment, we put together a few tools to help the professional oboist take (an oh too honest look) at what we're spending on the creation of an oboe reed relative to the price of a <div class="tooltip">
+               <span class="tooltiptext">Paid Link to Amazon</span>
+             <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Legere Oboe Reed</b></a>
+             </div></h6>
           <p>1. “Often you must play an ugly note to bring out the beauty of the others.”</p>
-          <h6 class="tab">Many of Tabuteau’s quotes address the necessity of maintaining contrast within one’s playing; the ability to play with a vibrant, soaring sound and a multitude of colors. In the quote above, Tabuteau is guarding against falling in love with one single tone color, therein losing the ability to make contrast. Without contrast, the listener struggles to discern a beautiful tone from a plain one. As it’s very difficult to produce a beautiful tone, it becomes understandable that once oboists manage to do so, they can become reluctant to vary it with the occasional bit of aggressive or harsh sound. Tabuteau recognized this and repeated the above quote often enough that generations of oboists still hear it to this day.</h6>
+          <h6 class="tab">Many of Tabuteau’s quotes address the necessity of maintaining contrast within one’s playing; the ability to play with a vibrant, soaring sound and a multitude of colors. In the quote above, Tabuteau is guarding against falling in love with one single tone color, therein losing the ability to make contrast. Without contrast, the listener struggles to discern a beautiful tone from a plain one. As it’s very difficult to produce a beautiful tone, it becomes understandable that once oboists manage to do so, they can become reluctant to vary it with the occasional bit of aggressive or harsh sound. Tabuteau recognized this and repeated the above quote often enough that generations of oboists still hear it to this day.
+          </h6>
           <div id="reedCalc">
           </div>
+          <h6>* “As an Amazon Associate I earn from qualifying purchases.”</h6>
         </div>
   <div id="left-box">
   </div>
@@ -776,12 +829,13 @@ const
       inputBox = {
         border: '2px solid #c299ff',
         borderRadius: 5,
-        marginRight: 2,
+        marginRight: 6,
         marginTop:1.75,
         display: 'flex',
         direction: 'ltr',
         textAlign: 'right',
-        padding: .5,
+        padding: .25,
+        lineHeight: 1.3,
 
 
 },
@@ -791,18 +845,18 @@ const
         flexWrap: 'nowrap',
         justifyContent: 'flexStart',
         alignItems: 'baseline',
-        borderTop: '2px solid black',
-        borderRight: '2px solid black',
-        borderLeft: '2px solid black',
+        borderTop: '1px solid #47476b',
+        borderRight: '1px solid #47476b',
+        borderLeft: '1px solid #47476b',
         backgroundColor: '#f0e6ff',
-        maxWidth: '210px',
-        minWidth: '210px',
+        maxWidth: '240px',
+        minWidth: '240px',
         height: 28,
         textAlign: 'right',
         direction: 'rtl',
         fontSize: 11,
         boxSizing: 'borderBox',
-        lineHeight: 1.7
+        lineHeight: 2,
       },
 
 unit2 = {
@@ -811,20 +865,20 @@ unit2 = {
         flexWrap: 'nowrap',
         justifyContent: 'spaceEvenly',
         alignItems: 'baseline',
-        borderTop: '2px solid black',
-        borderRight: '2px solid black',
-        borderLeft: '2px solid black',
+        borderTop: '1px solid #47476b',
+        borderRight: '1px solid #47476b',
+        borderLeft: '1px solid #47476b',
         paddingTop: 0,
         paddingRight: 7.5,
-        backgroundColor: 'white',
-        maxWidth: '210px',
-        minWidth: '210px',
+        backgroundColor: '#fafaff',
+        maxWidth: '240px',
+        minWidth: '240px',
         height: 28,
         direction: 'rtl',
         fontSize: 14,
         fontFamily: "Raleway",
         boxSizing: 'borderBox',
-        lineHeight: 1.7
+        lineHeight: 1.8,
       },
       unit3 = {
         display: 'flex',
@@ -832,20 +886,21 @@ unit2 = {
         flexWrap: 'nowrap',
         justifyContent: 'spaceEvenly',
         alignItems: 'baseline',
-        borderTop: '2px solid black',
-        borderRight: '2px solid black',
-        borderLeft: '2px solid black',
+        borderTop: '1px solid #47476b',
+        borderRight: '1px solid #47476b',
+        borderLeft: '1px solid #47476b',
+        borderRadius: '8px 8px 0px 0px',
         paddingTop: 0,
         paddingRight: 10,
-        backgroundColor: '#ffffcc',
-        maxWidth: '210px',
-        minWidth: '210px',
-        height: 28,
+        backgroundColor: '#944dff',
+        maxWidth: '240px',
+        minWidth: '240px',
+        height: 40,
         direction: 'rtl',
         fontSize: 14,
         fontFamily: "Raleway",
         boxSizing: 'borderBox',
-        lineHeight: 1.7,
+        lineHeight: 2,
         fontWeight: 500
       },
       unit4 ={
@@ -854,30 +909,43 @@ unit2 = {
         flexWrap: 'nowrap',
         justifyContent: 'spaceEvenly',
         alignItems: 'baseline',
-        borderTop: '2px solid black',
-        borderRight: '2px solid black',
-        borderLeft: '2px solid black',
-        borderBottom: '2px solid black',
+        borderTop: '1px solid #47476b',
+        borderRight: '1px solid #47476b',
+        borderLeft: '1px solid #47476b',
+        borderBottom: '1px solid #47476b',
+        borderRadius: '0px 0px 8px 8px',
         paddingTop: 0,
         paddingRight: 10,
-        backgroundColor: '#b3ffb3',
-        maxWidth: '210px',
-        minWidth: '210px',
-        height: 28,
+        backgroundColor: 'white',
+        maxWidth: '240px',
+        minWidth: '240px',
+        height: 40,
         direction: 'rtl',
         fontSize: 14,
         fontFamily: "Raleway",
         boxSizing: 'borderBox',
-        lineHeight: 1.7,
-        fontWeight: 700
+        lineHeight: 2.5,
+        fontWeight: 700,
+      },
+      titleText = {
+        fontSize:19,
+        fontFamily: "Raleway",
+        color:'white',
+      },
+      footText = {
+        fontSize:14,
+        fontFamily: "Raleway",
+        color:'black',
       },
       sText = {
-        fontSize:11,
+        fontSize:13,
         fontFamily: "Raleway",
+        color:'#47476b',
       },
       tText = {
-        fontSize:11,
+        fontSize:13,
         fontFamily: "Raleway",
+        color:'#47476b',
       },
       answerText = {
         fontSize:14,
@@ -994,6 +1062,9 @@ class ControlledInput extends React.Component {
 
     return (
       <div>
+         <div style={unit3}>
+          <div style={titleText}>Cost of One Oboe Reed</div>
+         </div>
          <div style={unit}>
           <input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={6} />&nbsp;$&nbsp;
            <div style={sText}>:Cost of pound of Cane</div>
@@ -1059,13 +1130,13 @@ class ControlledInput extends React.Component {
            &nbsp;<div style={answerText}>${laborPerReed}</div>
           <div style={sText}> &nbsp;:Labor Cost per Reed</div>
         </div>
-        <div style={unit3}>
+        <div style={unit2}>
 
      <div style={answerText}>${totalWithoutLabor}</div><div style={tText}>&nbsp;:Materials Cost (w/o Labor)</div>
         </div>
         <div style={unit4}>
           <div style={answerText}>${totalWithLabor}</div>
-          <div style={sText}>&nbsp;:Total Cost with Labor</div>
+          <div style={footText}>&nbsp;:Total Cost with Labor</div>
 
         </div>
       </div>
