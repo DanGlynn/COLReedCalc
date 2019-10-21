@@ -836,328 +836,458 @@ iframe {
 <!-- Your custom script here -->
 <script type="text/babel">
  'use strict'
-const
-      inputBox = {
-        border: '2px solid #c299ff',
-        borderRadius: 5,
-        marginRight: 6,
-        marginTop:1.75,
-        display: 'flex',
-        direction: 'ltr',
-        textAlign: 'right',
-        padding: .25,
-        lineHeight: 1.3,
+ const
+       inputBox = {
+         border: '2px solid #c299ff',
+         borderRadius: 5,
+         marginRight: 6,
+         marginTop:1.75,
+         display: 'flex',
+         direction: 'ltr',
+         textAlign: 'right',
+         padding: .25,
+         lineHeight: 1.3,
 
 
-},
-      unit = {
-        display: 'flex',
-        flexDirection: 'rowReverse',
-        flexWrap: 'nowrap',
-        justifyContent: 'flexStart',
-        alignItems: 'baseline',
-        borderTop: '1px solid #47476b',
-        borderRight: '1px solid #47476b',
-        borderLeft: '1px solid #47476b',
-        backgroundColor: '#f0e6ff',
-        maxWidth: '240px',
-        minWidth: '240px',
-        height: 28,
-        textAlign: 'right',
-        direction: 'rtl',
-        fontSize: 11,
-        boxSizing: 'borderBox',
-        lineHeight: 2,
-      },
-
-unit2 = {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'spaceEvenly',
-        alignItems: 'baseline',
-        borderTop: '1px solid #47476b',
-        borderRight: '1px solid #47476b',
-        borderLeft: '1px solid #47476b',
-        paddingTop: 0,
-        paddingRight: 7.5,
-        backgroundColor: '#fafaff',
-        maxWidth: '240px',
-        minWidth: '240px',
-        height: 28,
-        direction: 'rtl',
-        fontSize: 14,
-        fontFamily: "Raleway",
-        boxSizing: 'borderBox',
-        lineHeight: 1.8,
-      },
-      unit3 = {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'spaceEvenly',
-        alignItems: 'baseline',
-        borderTop: '1px solid #47476b',
-        borderRight: '1px solid #47476b',
-        borderLeft: '1px solid #47476b',
-        borderRadius: '8px 8px 0px 0px',
-        paddingTop: 0,
-        paddingRight: 10,
-        backgroundColor: '#944dff',
-        maxWidth: '240px',
-        minWidth: '240px',
-        height: 40,
-        direction: 'rtl',
-        fontSize: 14,
-        fontFamily: "Raleway",
-        boxSizing: 'borderBox',
-        lineHeight: 2,
-        fontWeight: 500
-      },
-      unit4 ={
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'spaceEvenly',
-        alignItems: 'baseline',
-        borderTop: '1px solid #47476b',
-        borderRight: '1px solid #47476b',
-        borderLeft: '1px solid #47476b',
-        borderBottom: '1px solid #47476b',
-        borderRadius: '0px 0px 8px 8px',
-        paddingTop: 0,
-        paddingRight: 10,
-        backgroundColor: 'white',
-        maxWidth: '240px',
-        minWidth: '240px',
-        height: 40,
-        direction: 'rtl',
-        fontSize: 14,
-        fontFamily: "Raleway",
-        boxSizing: 'borderBox',
-        lineHeight: 2.5,
-        fontWeight: 700,
-      },
-      titleText = {
-        fontSize:19,
-        fontFamily: "Raleway",
-        color:'white',
-      },
-      footText = {
-        fontSize:14,
-        fontFamily: "Raleway",
-        color:'black',
-      },
-      sText = {
-        fontSize:13,
-        fontFamily: "Raleway",
-        color:'#47476b',
-      },
-      tText = {
-        fontSize:13,
-        fontFamily: "Raleway",
-        color:'#47476b',
-      },
-      answerText = {
-        fontSize:14,
-        color: 'red',
-        fontFamily: "Raleway",
-      };
+ },
+       legereInputBox = {
+         border: '2px solid #c299ff',
+         borderRadius: 5,
+         marginRight: 6,
+         marginTop:1.75,
+         display: 'flex',
+         padding: .25,
+         lineHeight: 1.3,
 
 
-class ControlledInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: 166,
-      input2: 20,
-      input3: 5,
-      input4: 50,
-      input5: 95,
-      input6: 30,
-      input7: 6,
-      input8: 133,
-      input9: 80,
-      input10: 2,
-      input11: 8.25,
+ },
+       unit = {
+         display: 'flex',
+         flexDirection: 'rowReverse',
+         flexWrap: 'nowrap',
+         justifyContent: 'flexStart',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         backgroundColor: '#f0e6ff',
+         maxWidth: '240px',
+         minWidth: '240px',
+         height: 28,
+         textAlign: 'right',
+         direction: 'rtl',
+         fontSize: 11,
+         boxSizing: 'borderBox',
+         lineHeight: 2,
+       },
 
-    };
+ unit2 = {
+         display: 'flex',
+         flexDirection: 'row',
+         flexWrap: 'nowrap',
+         justifyContent: 'spaceEvenly',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         paddingTop: 0,
+         paddingRight: 7.5,
+         backgroundColor: '#fafaff',
+         maxWidth: '240px',
+         minWidth: '240px',
+         height: 28,
+         direction: 'rtl',
+         fontSize: 14,
+         fontFamily: "Raleway",
+         boxSizing: 'borderBox',
+         lineHeight: 1.8,
+       },
+       unit3 = {
+         display: 'flex',
+         flexDirection: 'row',
+         flexWrap: 'nowrap',
+         justifyContent: 'spaceEvenly',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         borderRadius: '8px 8px 0px 0px',
+         paddingTop: 0,
+         paddingRight: 10,
+         backgroundColor: '#944dff',
+         maxWidth: '240px',
+         minWidth: '240px',
+         height: 40,
+         direction: 'rtl',
+         fontSize: 14,
+         fontFamily: "Raleway",
+         boxSizing: 'borderBox',
+         lineHeight: 2,
+         fontWeight: 500
+       },
+       unit4 ={
+         display: 'flex',
+         flexDirection: 'row',
+         flexWrap: 'nowrap',
+         justifyContent: 'spaceEvenly',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         borderBottom: '1px solid #47476b',
+         borderRadius: '0px 0px 8px 8px',
+         paddingTop: 0,
+         paddingRight: 10,
+         backgroundColor: 'white',
+         maxWidth: '240px',
+         minWidth: '240px',
+         height: 40,
+         direction: 'rtl',
+         fontSize: 14,
+         fontFamily: "Raleway",
+         boxSizing: 'borderBox',
+         lineHeight: 2.5,
+         fontWeight: 700,
+       },
+       legereUnit = {
+         display: 'flex',
+         flexDirection: 'rowReverse',
+         flexWrap: 'nowrap',
+         justifyContent: 'flexStart',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         backgroundColor: '#f0e6ff',
+         maxWidth: '400px',
+         minWidth: '400px',
+         height: 28,
+         textAlign: 'right',
+         direction: 'rtl',
+         fontSize: 11,
+         boxSizing: 'borderBox',
+         lineHeight: 2,
+       },
 
-    this.costPerPound=this.costPerPound.bind(this);
-    this.reedsPerPound=this.reedsPerPound.bind(this);
-    this.threadCost=this.threadCost.bind(this);
-    this.reedsPerSpool=this.reedsPerSpool.bind(this);
-    this.knifeCost=this.knifeCost.bind(this);
-    this.knifeLife=this.knifeLife.bind(this);
-    this.stapleCost=this.stapleCost.bind(this);
-    this.gougerCost=this.gougerCost.bind(this);
-    this.gougerLife=this.gougerLife.bind(this);
-    this.laborHours=this.laborHours.bind(this);
-    this.hourlyWage=this.hourlyWage.bind(this);
 
-  }
-  //regex to remove '$'  - this.state.input.replace(/[^0-9.]/g, '')
-   costPerPound(event){
-    this.setState({
-      input: event.target.value.replace(/[^0-9.]/g,''),
-      })
-     }
-   reedsPerPound(event){
-    this.setState({
-      input2:event.target.value.replace(/[^0-9.]/g,''),
-    })
+       legereTitle = {
+         display: 'flex',
+         flexDirection: 'row',
+         flexWrap: 'nowrap',
+         justifyContent: 'spaceEvenly',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         borderRadius: '8px 8px 0px 0px',
+         paddingTop: 0,
+         paddingRight: 10,
+         backgroundColor: '#944dff',
+         maxWidth: '400px',
+         minWidth: '400px',
+         height: 40,
+         direction: 'rtl',
+         fontSize: 14,
+         fontFamily: "Raleway",
+         boxSizing: 'borderBox',
+         lineHeight: 2,
+         fontWeight: 500
+       },
+       legereUnit3 ={
+         display: 'flex',
+         flexDirection: 'row',
+         flexWrap: 'nowrap',
+         justifyContent: 'spaceEvenly',
+         alignItems: 'baseline',
+         borderTop: '1px solid #47476b',
+         borderRight: '1px solid #47476b',
+         borderLeft: '1px solid #47476b',
+         borderBottom: '1px solid #47476b',
+         borderRadius: '0px 0px 8px 8px',
+         paddingTop: 0,
+         paddingRight: 10,
+         backgroundColor: 'white',
+         maxWidth: '400px',
+         minWidth: '400px',
+         height: 40,
+         direction: 'rtl',
+         fontSize: 14,
+         fontFamily: "Raleway",
+         boxSizing: 'borderBox',
+         lineHeight: 2.5,
+         fontWeight: 700,
+       },
+
+       tab = {
+         textIndent:0,
+         marginTop:80,
+         marginBottom:80
+       },
+
+       h6 = {
+ 	      fontSize: 18,
+         fontFamily: 'Raleway',
+       },
+
+
+       titleText = {
+         fontSize:19,
+         fontFamily: "Raleway",
+         color:'white',
+       },
+       footText = {
+         fontSize:14,
+         fontFamily: "Raleway",
+         color:'black',
+       },
+       sText = {
+         fontSize:13,
+         fontFamily: "Raleway",
+         color:'#47476b',
+       },
+       legereSText = {
+         fontSize:13,
+         fontFamily: "Raleway",
+         color:'#47476b',
+       },
+       tText = {
+         fontSize:13,
+         fontFamily: "Raleway",
+         color:'#47476b',
+       },
+       answerText = {
+         fontSize:14,
+         color: 'red',
+         fontFamily: "Raleway",
+       };
+
+
+ class ControlledInput extends React.Component {
+   constructor(props) {
+     super(props);
+     this.state = {
+       input: 166,
+       input2: 20,
+       input3: 5,
+       input4: 50,
+       input5: 95,
+       input6: 30,
+       input7: 6,
+       input8: 133,
+       input9: 80,
+       input10: 2,
+       input11: 8.25,
+       input12: 8,
+       input13: 150,
+
+     };
+
+     this.costPerPound=this.costPerPound.bind(this);
+     this.reedsPerPound=this.reedsPerPound.bind(this);
+     this.threadCost=this.threadCost.bind(this);
+     this.reedsPerSpool=this.reedsPerSpool.bind(this);
+     this.knifeCost=this.knifeCost.bind(this);
+     this.knifeLife=this.knifeLife.bind(this);
+     this.stapleCost=this.stapleCost.bind(this);
+     this.gougerCost=this.gougerCost.bind(this);
+     this.gougerLife=this.gougerLife.bind(this);
+     this.laborHours=this.laborHours.bind(this);
+     this.hourlyWage=this.hourlyWage.bind(this);
+     this.caneMultiplier=this.caneMultiplier.bind(this);
+
    }
-  threadCost(event){
-    this.setState({
-      input3:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   reedsPerSpool(event){
-    this.setState({
-      input4:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   knifeCost(event){
-    this.setState({
-      input5:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   knifeLife(event){
-    this.setState({
-      input6:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   stapleCost(event){
-    this.setState({
-      input7:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   gougerCost(event){
-    this.setState({
-      input8:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   gougerLife(event){
-    this.setState({
-      input9:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-   laborHours(event){
-    this.setState({
-      input10:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-  hourlyWage(event){
-    this.setState({
-      input11:event.target.value.replace(/[^0-9.]/g,''),
-    })
-  }
-  render() {
+   //regex to remove '$'  - this.state.input.replace(/[^0-9.]/g, '')
+    costPerPound(event){
+     this.setState({
+       input: event.target.value.replace(/[^0-9.]/g,''),
+       })
+      }
+    reedsPerPound(event){
+     this.setState({
+       input2:event.target.value.replace(/[^0-9.]/g,''),
+     })
+    }
+   threadCost(event){
+     this.setState({
+       input3:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    reedsPerSpool(event){
+     this.setState({
+       input4:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    knifeCost(event){
+     this.setState({
+       input5:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    knifeLife(event){
+     this.setState({
+       input6:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    stapleCost(event){
+     this.setState({
+       input7:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    gougerCost(event){
+     this.setState({
+       input8:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    gougerLife(event){
+     this.setState({
+       input9:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+    laborHours(event){
+     this.setState({
+       input10:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+   hourlyWage(event){
+     this.setState({
+       input11:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+   caneMultiplier(event){
+     this.setState({
+       input12:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+   render() {
 
-     // if ((typeof(this.state.input) === 'number') && (typeof(this.state.input2) === 'number'))  { var canePerReed = (this.state.input / this.state.input2); canePerReed = Math.round(100 * eval(canePerReed)) / 100; }
-    let canePerReed = (this.state.input / this.state.input2);
-    canePerReed = Math.round(100 * eval(canePerReed)) / 100;
-    let threadPerReed = this.state.input3 / this.state.input4;
-    threadPerReed = Math.round(100 * eval(threadPerReed)) / 100;
-    let knifePerReed = this.state.input5 / this.state.input6;
-    knifePerReed = Math.round(100 * eval(knifePerReed)) / 100;
-    let gougerPerReed = this.state.input8 / this.state.input9;
-    gougerPerReed = Math.round(100 * eval(gougerPerReed)) / 100;
-    let laborPerReed = this.state.input10 * this.state.input11;
-    laborPerReed = Math.round(100 * eval(laborPerReed)) / 100;
-    let totalWithoutLabor = canePerReed + threadPerReed + knifePerReed + gougerPerReed;
-    totalWithoutLabor = Math.round(100 * eval(totalWithoutLabor)) / 100;
-    let totalWithLabor = canePerReed + threadPerReed + knifePerReed + gougerPerReed + laborPerReed;
-    totalWithLabor = Math.round(100 * eval(totalWithLabor)) / 100;
+      // if ((typeof(this.state.input) === 'number') && (typeof(this.state.input2) === 'number'))  { var canePerReed = (this.state.input / this.state.input2); canePerReed = Math.round(100 * eval(canePerReed)) / 100; }
+     let canePerReed = (this.state.input / this.state.input2);
+     canePerReed = Math.round(100 * eval(canePerReed)) / 100;
+     let threadPerReed = this.state.input3 / this.state.input4;
+     threadPerReed = Math.round(100 * eval(threadPerReed)) / 100;
+     let knifePerReed = this.state.input5 / this.state.input6;
+     knifePerReed = Math.round(100 * eval(knifePerReed)) / 100;
+     let gougerPerReed = this.state.input8 / this.state.input9;
+     gougerPerReed = Math.round(100 * eval(gougerPerReed)) / 100;
+     let laborPerReed = this.state.input10 * this.state.input11;
+     laborPerReed = Math.round(100 * eval(laborPerReed)) / 100;
+     let totalWithoutLabor = canePerReed + threadPerReed + knifePerReed + gougerPerReed;
+     totalWithoutLabor = Math.round(100 * eval(totalWithoutLabor)) / 100;
+     let totalWithLabor = canePerReed + threadPerReed + knifePerReed + gougerPerReed + laborPerReed;
+     totalWithLabor = Math.round(100 * eval(totalWithLabor)) / 100;
+     let caneVersusLegere = (this.state.input12 * totalWithLabor);
+     caneVersusLegere = Math.round(100 * eval(caneVersusLegere)) / 100;
+     let savingsPerLegere = (caneVersusLegere - this.state.input13);
+    savingsPerLegere = Math.round(100 * eval(savingsPerLegere)) / 100;
 
 
-    return (
-      <div>
-         <div style={unit3}>
-          <div style={titleText}>Cost of One Oboe Reed</div>
+
+     return (
+       <div>
+          <div style={unit3}>
+           <div style={titleText}>Cost of One Oboe Reed</div>
+          </div>
+          <div style={unit}>
+           <input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={6} />&nbsp;$&nbsp;
+            <div style={sText}>:Cost of pound of Cane</div>
+          </div>
+          <div style={unit}>
+           <input value={this.state.input2} onChange={this.reedsPerPound} style={inputBox} size={4} />&nbsp;
+           <div style={sText}>:Reeds per Pound of Cane</div>
+          </div>
+          <div style={unit2}>
+           <div style={answerText}>${canePerReed}</div>
+           &nbsp;<div style={sText}>:Cost per Piece of Cane</div>
+          </div>
+          <div style={unit}>
+           <input value={this.state.input3} onChange={this.threadCost} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <div style={sText}>:Spool of Thread Cost</div>
+          </div>
+          <div style={unit}>
+           <input value={this.state.input4} onChange={this.reedsPerSpool} style={inputBox} size={4} />&nbsp;
+           <div style={sText}>:Reeds per Spool</div>
+          </div>
+         <div style={unit2}>
+           <div style={answerText}>${threadPerReed}</div>
+           <div style={sText}>&nbsp;:Thread Cost per Reed</div>
          </div>
          <div style={unit}>
-          <input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={6} />&nbsp;$&nbsp;
-           <div style={sText}>:Cost of pound of Cane</div>
+           <input value={this.state.input5} onChange={this.knifeCost} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <div style={tText}>:Cost of One Reed Knife</div>
          </div>
          <div style={unit}>
-          <input value={this.state.input2} onChange={this.reedsPerPound} style={inputBox} size={4} />&nbsp;
-          <div style={sText}>:Reeds per Pound of Cane</div>
+           <input value={this.state.input6} onChange={this.knifeLife} style={inputBox} size={4} />&nbsp;
+           <div style={sText}>:Life of Knife (in Reeds)</div>
          </div>
          <div style={unit2}>
-          <div style={answerText}>${canePerReed}</div>
-          &nbsp;<div style={sText}>:Cost per Piece of Cane</div>
+           <div style={answerText}>${knifePerReed}</div>
+           &nbsp;<div style={sText}>:Knife Cost per Reed</div>
          </div>
          <div style={unit}>
-          <input value={this.state.input3} onChange={this.threadCost} style={inputBox} size={6} />&nbsp;$&nbsp;
-          <div style={sText}>:Spool of Thread Cost</div>
+           <input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <div style={sText}>:Cost of Staple</div>
          </div>
          <div style={unit}>
-          <input value={this.state.input4} onChange={this.reedsPerSpool} style={inputBox} size={4} />&nbsp;
-          <div style={sText}>:Reeds per Spool</div>
+           <input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={5} />&nbsp;$&nbsp;
+           <div style={tText}>:Gouger Blade Replacement</div>
          </div>
-        <div style={unit2}>
-          <div style={answerText}>${threadPerReed}</div>
-          <div style={sText}>&nbsp;:Thread Cost per Reed</div>
-        </div>
-        <div style={unit}>
-          <input value={this.state.input5} onChange={this.knifeCost} style={inputBox} size={6} />&nbsp;$&nbsp;
-          <div style={tText}>:Cost of One Reed Knife</div>
-        </div>
-        <div style={unit}>
-          <input value={this.state.input6} onChange={this.knifeLife} style={inputBox} size={4} />&nbsp;
-          <div style={sText}>:Life of Knife (in Reeds)</div>
-        </div>
-        <div style={unit2}>
-          <div style={answerText}>${knifePerReed}</div>
-          &nbsp;<div style={sText}>:Knife Cost per Reed</div>
-        </div>
-        <div style={unit}>
-          <input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={6} />&nbsp;$&nbsp;
-          <div style={sText}>:Cost of Staple</div>
-        </div>
-        <div style={unit}>
-          <input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={5} />&nbsp;$&nbsp;
-          <div style={tText}>:Gouger Blade Replacement</div>
-        </div>
-        <div style={unit}>
-          <input value={this.state.input9} onChange={this.gougerLife} style={inputBox} size={4} />&nbsp;
-          <div style={tText}>:Gouger Blade Life (in Reeds)</div>
-        </div>
-        <div style={unit2}>
-          <div style={answerText}>${gougerPerReed}</div>
-          <div style={sText}>&nbsp;:Gouger Cost per Reed</div>
+         <div style={unit}>
+           <input value={this.state.input9} onChange={this.gougerLife} style={inputBox} size={4} />&nbsp;
+           <div style={tText}>:Gouger Blade Life (in Reeds)</div>
+         </div>
+         <div style={unit2}>
+           <div style={answerText}>${gougerPerReed}</div>
+           <div style={sText}>&nbsp;:Gouger Cost per Reed</div>
 
-        </div>
-        <div style={unit}>
-          <input value={this.state.input10} onChange={this.laborHours} style={inputBox} size={3} />&nbsp;
-          <div style={sText}>:Labor Hours (per Reed)</div>
-        </div>
-        <div style={unit}>
-          <input value={this.state.input11} onChange={this.hourlyWage} style={inputBox} size={5} />&nbsp;$&nbsp;
-          <div style={sText}>:Your Hourly Wage</div>
-        </div>
-        <div style={unit2}>
-           &nbsp;<div style={answerText}>${laborPerReed}</div>
-          <div style={sText}> &nbsp;:Labor Cost per Reed</div>
-        </div>
-        <div style={unit2}>
+         </div>
+         <div style={unit}>
+           <input value={this.state.input10} onChange={this.laborHours} style={inputBox} size={3} />&nbsp;
+           <div style={sText}>:Labor Hours (per Reed)</div>
+         </div>
+         <div style={unit}>
+           <input value={this.state.input11} onChange={this.hourlyWage} style={inputBox} size={5} />&nbsp;$&nbsp;
+           <div style={sText}>:Your Hourly Wage</div>
+         </div>
+         <div style={unit2}>
+            &nbsp;<div style={answerText}>${laborPerReed}</div>
+           <div style={sText}> &nbsp;:Labor Cost per Reed</div>
+         </div>
+         <div style={unit2}>
 
-     <div style={answerText}>${totalWithoutLabor}</div><div style={tText}>&nbsp;:Materials Cost (w/o Labor)</div>
-        </div>
-        <div style={unit4}>
-          <div style={answerText}>${totalWithLabor}</div>
-          <div style={footText}>&nbsp;:Total Cost with Labor</div>
-
-        </div>
+      <div style={answerText}>${totalWithoutLabor}</div><div style={tText}>&nbsp;:Materials Cost (w/o Labor)</div>
+         </div>
+         <div style={unit4}>
+           <div style={answerText}>${totalWithLabor}</div>
+           <div style={footText}>&nbsp;:Total Cost with Labor</div>
       </div>
-    );
-  }
-};
+           <div style={tab}>
+             <div style={h6}>
+             Right now I've got this set up for a pound of Loree tube cane from Midwest Musical Imports,
+             a Landwell Double Hollow Ground Reed Knife, a Pisoni 47 mm staple, and a Harvard Double Reed gouging machine with a J+2 gouger blade. I've set the hourly wage to the Illinois minimum wage
+             of $8.25 so feel to tweak this depending on what you feel your time is worth.
+             </div>
+           </div>
+         <div style={legereTitle}>
+           <div style={titleText}>{this.state.input12} Cane Reeds vs. One Legere Reed</div>
+          </div>
+         <div style={legereUnit}>
+            <div style={answerText}>${caneVersusLegere}</div>
+            <div style={legereSText}>:cane oboe reeds</div><input value={this.state.input12} onChange={this.caneMultiplier} style={legereInputBox} size={3} />&nbsp;<div style={legereSText}>Cost of</div>
+          </div>
+          <div style={legereUnit}>
+           <div style={answerText}>${this.state.input13}</div>&nbsp;
+           <div style={legereSText}>:Cost of Legere Reed</div>
+          </div>
+          <div style={legereUnit3}>
+           <div style={answerText}>${savingsPerLegere}</div>
+           &nbsp;<div style={sText}>:Savings per Legere Reed</div>
+          </div>
+       </div>
+     );
+   }
+ };
 
 
-ReactDOM.render(<ControlledInput />, document.getElementById('reedCalc'));
-
+ ReactDOM.render(<ControlledInput />, document.getElementById('reedCalc'));
 
 </script>
 
