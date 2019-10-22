@@ -1,4 +1,4 @@
-
+'#7d39e3'
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -791,30 +791,32 @@ iframe {
         <h4>by Daniel Glynn</h4>
 
         <div id="inner-tab-container" style="padding-bottom:5vh;">
-          <h6 class="tab">With the
+          <h6 class="tab">With Legere now offering a
             <div class="tooltip">
               <span class="tooltiptext">Paid Amazon Link</span>
-            <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Legere Oboe Reed</b></a>
+            <a href="https://amzn.to/2VMrL1D" target="_blank"><b>High Quality Synthetic Oboe Reed,</b></a>
             </div>
-             now available as a high quality synthetic reed option, professional oboists are taking a closer look at this *$150 price point.
-             While determining the value of this new unknown reed option might at first seem like a lengthy and overwhelming process,
-             we went ahead and put together a few tools to help the professional oboist take a perhaps "too honest" look at what we're spending per cane reed,
+              professionals everywhere are taking a second look at this hefty *$150 price point.
+             We went ahead and put together a few tools to help the professional oboist resuscitate from dehabilitating sticker shock. take a perhaps "too honest" look at what we're spending per cane reed,
              while also comparing this number to the price and supposed life expectancy of a
              <div class="tooltip">
                <span class="tooltiptext">Paid Amazon Link</span>
              <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Legere Oboe Reed.</b></a>
              </div></h6>
-          <p>"The Cost of a Professional Cane Reed."</p>
+          <p>"The Cost of One Cane Reed."</p>
           <h6 class="tab">
-            In order to get a realistic number of the cost associated with making your cane reed, we built the table below to both determine and total the "cost per reed"
-            of your cane, thread, reed knife, and gouger. The subtotals and grand total update as
-            you enter your individual costs. Since we're comparing the total cost of reed production with the Legere Reed, we've also
-            added in a labor cost and asked you to set your hourly rate. It's important to remember that there is virtually no labor cost associated with the Legere Reed as this is essentially
-            built in to the purchase price. Also, the initial purchase price of your gouger and shaper tips are not included in the table below as many of them are inherited and
+            Taking into account all the factors that contribute to the cost of a single cane reed, we built the table below to total the "cost per reed"
+            of your tube cane, thread, reed knife, and gouger. Notice that the red subtotals and grand total update as
+            you enter your individual costs. Since we're comparing the total cost making a cane reed with the purchase price of a Legere Reed, we've also
+            added in a labor cost and asked you to set your hourly rate. It's important to remember that there is virtually no labor cost associated with the Legere Reed.
+            Also, the initial purchase price of your gouger and shaper tips are not included in the table below as many of them are inherited and
             they would only slightly increase the production price per reed over a lifetime of reed-making.
           </h6>
           <div id="reedCalc">
           </div>
+          <h6>As Legere makes the claim that their synthetic reeds last several months, while also assuming a professional goes through about one reed per week, we've set the table above to compare
+            your total cost of producing eight cane reeds with one Legere Reed. This way you can determine how much (if anything) you'd be saving with the purchase of one Legere Reed over the production cost
+            of 8 cane reeds.</h6>
           <h6>* As an Amazon Associate I earn from qualifying purchases.</h6>
         </div>
   <div id="left-box">
@@ -843,6 +845,7 @@ iframe {
          direction: 'ltr',
          textAlign: 'right',
          padding: .5,
+         paddingRight: 1,
          lineHeight: 1.3,
          boxSizing: 'borderBox',
 
@@ -857,8 +860,9 @@ iframe {
          direction: 'ltr',
          textAlign: 'right',
          padding: .5,
+         paddingRight: 1,
          lineHeight: 1.3,
-          boxSizing: 'borderBox',
+         boxSizing: 'borderBox',
 
 
  },
@@ -915,7 +919,7 @@ iframe {
          borderRadius: '8px 8px 0px 0px',
          paddingTop: 0,
          paddingRight: 10,
-         backgroundColor: '#944dff',
+         backgroundColor: '#7d39e3',
          maxWidth: '240px',
          minWidth: '240px',
          height: 40,
@@ -967,7 +971,7 @@ iframe {
          direction: 'rtl',
          fontSize: 11,
          boxSizing: 'borderBox',
-         lineHeight: 2,
+         lineHeight: 1.8,
        },
 
 
@@ -982,7 +986,7 @@ iframe {
          borderRadius: '8px 8px 0px 0px',
          paddingTop: 0,
          paddingRight: 0,
-         backgroundColor: '#944dff',
+         backgroundColor: '#7d39e3',
          maxWidth: '280px',
          minWidth: '280px',
          height: 40,
@@ -1045,7 +1049,7 @@ iframe {
          color:'white',
        },
        legereTitleText = {
-         fontSize:14,
+         fontSize:15,
          fontFamily: "Raleway",
          color:'white',
        },
@@ -1281,9 +1285,10 @@ iframe {
       </div>
            <div style={tab}>
              <div style={h6}>
-             Right now I've got this set up for a pound of Loree tube cane from Midwest Musical Imports,
-             a Landwell Double Hollow Ground Reed Knife, a Pisoni 47 mm staple, and a Harvard Double Reed gouging machine with a J+2 gouger blade. I've set the hourly wage to the Illinois minimum wage
-             of $8.25 so feel to tweak this depending on what you feel your time is worth.
+             The table above is set up for a pound of Loree tube cane from Midwest Musical Imports,
+             a Landwell Double Hollow Ground Reed Knife, a Pisoni 47 mm staple, and a Harvard Double Reed gouging machine with a J+2 gouger blade.
+             The hourly wage is set to the local minimum wage
+             here but be sure to adjust this depending on what you feel your time is worth.
              </div>
            </div>
          <div style={legereTitle}>
@@ -1294,12 +1299,12 @@ iframe {
             <div style={legereSText1}> = cane oboe reeds at $ {totalWithLabor}</div><input value={this.state.input12} onChange={this.caneMultiplier} style={legereInputBox} size={3} maxLength='2' />&nbsp;
           </div>
           <div style={legereUnit}>
-           <div style={answerText}>&nbsp;&nbsp;${this.state.input13}</div>&nbsp;
+           <div style={answerText} maxLength='7'>&nbsp;&nbsp;${this.state.input13}</div>&nbsp;
            <div style={legereSText}>:Cost of Legere Reed</div>
           </div>
           <div style={legereUnit3}>
            <div style={answerText}>${savingsPerLegere}</div>
-           &nbsp;<div style={sText}>:Overall Savings per Legere Reed</div>
+           &nbsp;<div style={sText}>:Savings per Legere Reed</div>
           </div>
         </div>
        </div>
