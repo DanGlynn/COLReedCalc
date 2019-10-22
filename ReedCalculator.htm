@@ -815,11 +815,6 @@ iframe {
           </h6>
           <div id="reedCalc">
           </div>
-          <h6 class="tab">
-            Right now I've got this set up for a pound of Loree tube cane from Midwest Musical Imports,
-            a Landwell Double Hollow Ground Reed Knife, a Pisoni 47 mm staple, and a Harvard Double Reed gouging machine with a J+2 gouger blade. I've set the hourly wage to the Illinois minimum wage
-            of $8.25 so feel to tweak this depending on what you feel your time is worth.
-          </h6>
           <h6>* As an Amazon Associate I earn from qualifying purchases.</h6>
         </div>
   <div id="left-box">
@@ -837,6 +832,8 @@ iframe {
 <script type="text/babel">
  'use strict'
  const
+
+
        inputBox = {
          border: '2px solid #c299ff',
          borderRadius: 5,
@@ -845,8 +842,9 @@ iframe {
          display: 'flex',
          direction: 'ltr',
          textAlign: 'right',
-         padding: .25,
+         padding: .5,
          lineHeight: 1.3,
+         boxSizing: 'borderBox',
 
 
  },
@@ -856,8 +854,11 @@ iframe {
          marginRight: 6,
          marginTop:1.75,
          display: 'flex',
-         padding: .25,
+         direction: 'ltr',
+         textAlign: 'right',
+         padding: .5,
          lineHeight: 1.3,
+          boxSizing: 'borderBox',
 
 
  },
@@ -959,8 +960,8 @@ iframe {
          borderRight: '1px solid #47476b',
          borderLeft: '1px solid #47476b',
          backgroundColor: '#f0e6ff',
-         maxWidth: '400px',
-         minWidth: '400px',
+         maxWidth: '280px',
+         minWidth: '280px',
          height: 28,
          textAlign: 'right',
          direction: 'rtl',
@@ -974,23 +975,22 @@ iframe {
          display: 'flex',
          flexDirection: 'row',
          flexWrap: 'nowrap',
-         justifyContent: 'spaceEvenly',
-         alignItems: 'baseline',
+         justifyContent: 'center',
          borderTop: '1px solid #47476b',
          borderRight: '1px solid #47476b',
          borderLeft: '1px solid #47476b',
          borderRadius: '8px 8px 0px 0px',
          paddingTop: 0,
-         paddingRight: 10,
+         paddingRight: 0,
          backgroundColor: '#944dff',
-         maxWidth: '400px',
-         minWidth: '400px',
+         maxWidth: '280px',
+         minWidth: '280px',
          height: 40,
-         direction: 'rtl',
+         direction: 'ltr',
          fontSize: 14,
          fontFamily: "Raleway",
          boxSizing: 'borderBox',
-         lineHeight: 2,
+         lineHeight: 3,
          fontWeight: 500
        },
        legereUnit3 ={
@@ -1007,8 +1007,8 @@ iframe {
          paddingTop: 0,
          paddingRight: 10,
          backgroundColor: 'white',
-         maxWidth: '400px',
-         minWidth: '400px',
+         maxWidth: '280px',
+         minWidth: '280px',
          height: 40,
          direction: 'rtl',
          fontSize: 14,
@@ -1018,8 +1018,16 @@ iframe {
          fontWeight: 700,
        },
 
+       reactContainer={
+         display: 'flex',
+         flexDirection: 'column',
+         justifyContent: 'center',
+         width: '60vw',
+         alignItems: 'center',
+       },
+
        tab = {
-         textIndent:0,
+
          marginTop:80,
          marginBottom:80
        },
@@ -1027,11 +1035,17 @@ iframe {
        h6 = {
  	      fontSize: 18,
          fontFamily: 'Raleway',
+         fontWeight: 400,
        },
 
 
        titleText = {
          fontSize:19,
+         fontFamily: "Raleway",
+         color:'white',
+       },
+       legereTitleText = {
+         fontSize:14,
          fontFamily: "Raleway",
          color:'white',
        },
@@ -1047,6 +1061,11 @@ iframe {
        },
        legereSText = {
          fontSize:13,
+         fontFamily: "Raleway",
+         color:'#47476b',
+       },
+       legereSText1 = {
+         fontSize:12,
          fontFamily: "Raleway",
          color:'#47476b',
        },
@@ -1183,15 +1202,16 @@ iframe {
 
      return (
        <div>
+         <div style={reactContainer}>
           <div style={unit3}>
            <div style={titleText}>Cost of One Oboe Reed</div>
           </div>
           <div style={unit}>
-           <input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <input value={this.state.input} onChange={this.costPerPound} style={inputBox} size={6} maxLength='6' />&nbsp;$&nbsp;
             <div style={sText}>:Cost of pound of Cane</div>
           </div>
           <div style={unit}>
-           <input value={this.state.input2} onChange={this.reedsPerPound} style={inputBox} size={4} />&nbsp;
+           <input value={this.state.input2} onChange={this.reedsPerPound} style={inputBox} size={4} maxLength='3' />&nbsp;
            <div style={sText}>:Reeds per Pound of Cane</div>
           </div>
           <div style={unit2}>
@@ -1199,11 +1219,11 @@ iframe {
            &nbsp;<div style={sText}>:Cost per Piece of Cane</div>
           </div>
           <div style={unit}>
-           <input value={this.state.input3} onChange={this.threadCost} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <input value={this.state.input3} onChange={this.threadCost} style={inputBox} size={6} maxLength='4' />&nbsp;$&nbsp;
            <div style={sText}>:Spool of Thread Cost</div>
           </div>
           <div style={unit}>
-           <input value={this.state.input4} onChange={this.reedsPerSpool} style={inputBox} size={4} />&nbsp;
+           <input value={this.state.input4} onChange={this.reedsPerSpool} style={inputBox} size={4} maxLength='3' />&nbsp;
            <div style={sText}>:Reeds per Spool</div>
           </div>
          <div style={unit2}>
@@ -1211,11 +1231,11 @@ iframe {
            <div style={sText}>&nbsp;:Thread Cost per Reed</div>
          </div>
          <div style={unit}>
-           <input value={this.state.input5} onChange={this.knifeCost} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <input value={this.state.input5} onChange={this.knifeCost} style={inputBox} size={6} maxLength='6'/>&nbsp;$&nbsp;
            <div style={tText}>:Cost of One Reed Knife</div>
          </div>
          <div style={unit}>
-           <input value={this.state.input6} onChange={this.knifeLife} style={inputBox} size={4} />&nbsp;
+           <input value={this.state.input6} onChange={this.knifeLife} style={inputBox} size={4} maxLength='3' />&nbsp;
            <div style={sText}>:Life of Knife (in Reeds)</div>
          </div>
          <div style={unit2}>
@@ -1223,15 +1243,15 @@ iframe {
            &nbsp;<div style={sText}>:Knife Cost per Reed</div>
          </div>
          <div style={unit}>
-           <input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={6} />&nbsp;$&nbsp;
+           <input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={6} maxLength='5' />&nbsp;$&nbsp;
            <div style={sText}>:Cost of Staple</div>
          </div>
          <div style={unit}>
-           <input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={5} />&nbsp;$&nbsp;
+           <input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={5} maxLength='6'/>&nbsp;$&nbsp;
            <div style={tText}>:Gouger Blade Replacement</div>
          </div>
          <div style={unit}>
-           <input value={this.state.input9} onChange={this.gougerLife} style={inputBox} size={4} />&nbsp;
+           <input value={this.state.input9} onChange={this.gougerLife} style={inputBox} size={4} maxLength='3' />&nbsp;
            <div style={tText}>:Gouger Blade Life (in Reeds)</div>
          </div>
          <div style={unit2}>
@@ -1240,11 +1260,11 @@ iframe {
 
          </div>
          <div style={unit}>
-           <input value={this.state.input10} onChange={this.laborHours} style={inputBox} size={3} />&nbsp;
+           <input value={this.state.input10} onChange={this.laborHours} style={inputBox} size={3} maxLength='1'/>&nbsp;
            <div style={sText}>:Labor Hours (per Reed)</div>
          </div>
          <div style={unit}>
-           <input value={this.state.input11} onChange={this.hourlyWage} style={inputBox} size={5} />&nbsp;$&nbsp;
+           <input value={this.state.input11} onChange={this.hourlyWage} style={inputBox} size={5} maxLength='5'/>&nbsp;$&nbsp;
            <div style={sText}>:Your Hourly Wage</div>
          </div>
          <div style={unit2}>
@@ -1267,20 +1287,21 @@ iframe {
              </div>
            </div>
          <div style={legereTitle}>
-           <div style={titleText}>{this.state.input12} Cane Reeds vs. One Legere Reed</div>
+           &nbsp;&nbsp;<div style={legereTitleText}> {this.state.input12} Cane Reeds vs. One Legere Reed </div>
           </div>
          <div style={legereUnit}>
-            <div style={answerText}>${caneVersusLegere}</div>
-            <div style={legereSText}>:cane oboe reeds</div><input value={this.state.input12} onChange={this.caneMultiplier} style={legereInputBox} size={3} />&nbsp;<div style={legereSText}>Cost of</div>
+            <div style={answerText}>&nbsp;&nbsp;${caneVersusLegere}</div>&nbsp;
+            <div style={legereSText1}> = cane oboe reeds at $ {totalWithLabor}</div><input value={this.state.input12} onChange={this.caneMultiplier} style={legereInputBox} size={3} maxLength='2' />&nbsp;
           </div>
           <div style={legereUnit}>
-           <div style={answerText}>${this.state.input13}</div>&nbsp;
+           <div style={answerText}>&nbsp;&nbsp;${this.state.input13}</div>&nbsp;
            <div style={legereSText}>:Cost of Legere Reed</div>
           </div>
           <div style={legereUnit3}>
            <div style={answerText}>${savingsPerLegere}</div>
-           &nbsp;<div style={sText}>:Savings per Legere Reed</div>
+           &nbsp;<div style={sText}>:Overall Savings per Legere Reed</div>
           </div>
+        </div>
        </div>
      );
    }
