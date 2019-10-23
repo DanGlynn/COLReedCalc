@@ -16,7 +16,7 @@
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="Legere Oboe Reed, Plastic Oboe Reed Review, Legere American Scrape Oboe Reed Review, Legere Oboe Reed Cost, Plastic Oboe Reed, American scrape plastic oboe reed, Legere American Style Oboe Reed, Plastic Oboe Reed Cost, Oboe Reed Cost, Chicago Oboe Lessons" />
 <meta name="description" content="Legere Oboe Reed - We review the cost versus life expectancy of this high quality, synthetic professional reed option." />
-  <title> Legere Reed Review | Reed Cost Calculator | Chicago Oboe Lessons</title>
+  <title> Legere Oboe Reed Review | Reed Cost Calculator | Chicago Oboe Lessons</title>
   <link rel="shortcut icon" type="image/x-icon" href="COL logo.png" />
 
   <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
@@ -796,27 +796,26 @@ iframe {
               <span class="tooltiptext">Paid Amazon Link</span>
             <a href="https://amzn.to/2VMrL1D" target="_blank"><b>High Quality Synthetic Oboe Reed,</b></a>
             </div>
-              professionals everywhere are taking a second look at this hefty *$150 price point.
-             We went ahead and put together a few tools to help the professional oboist resuscitate from dehabilitating sticker shock. take a perhaps "too honest" look at what we're spending per cane reed,
-             while also comparing this number to the price and supposed life expectancy of a
-             <div class="tooltip">
-               <span class="tooltiptext">Paid Amazon Link</span>
-             <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Legere Oboe Reed.</b></a>
-             </div></h6>
+              professionals everywhere are taking a closer look at this *$150 price point.
+             We went ahead and put together a few tools to help the professional oboist better determine the true production cost of a traditional cane reed,
+             and perhaps alleviate some of the sticker shock caused
+             by the thought of spending $150 on an oboe reed.</h6>
           <p>"The Cost of One Cane Reed."</p>
           <h6 class="tab">
-            Taking into account all the factors that contribute to the cost of a single cane reed, we built the table below to total the "cost per reed"
-            of your tube cane, thread, reed knife, and gouger. Notice that the red subtotals and grand total update as
-            you enter your individual costs. Since we're comparing the total cost making a cane reed with the purchase price of a Legere Reed, we've also
-            added in a labor cost and asked you to set your hourly rate. It's important to remember that there is virtually no labor cost associated with the Legere Reed.
-            Also, the initial purchase price of your gouger and shaper tips are not included in the table below as many of them are inherited and
-            they would only slightly increase the production price per reed over a lifetime of reed-making.
+            Taking into account all the factors that contribute to the cost of a traditional cane reed, we built the table below to total the "cost per reed"
+            of your tube cane, thread, reed knife, and gouger. Notice that the red subtotals and "Total Cost" update as
+            you enter the individual costs of your various reed-making materials. Since we're comparing the total cost making a cane reed with the purchase price of a Legere Reed, we've also
+            factored in your labor which requires you to enter an hourly rate. It's important to remember that there is virtually no labor cost associated with the Legere Reed.
+            Also, the initial purchase price of your gouger and shaper tips are not included in the table below as
+            they would only slightly increase the production cost per reed over a lifetime of reed-making.
           </h6>
           <div id="reedCalc">
           </div>
-          <h6>As Legere makes the claim that their synthetic reeds last several months, while also assuming a professional goes through about one reed per week, we've set the table above to compare
-            your total cost of producing eight cane reeds with one Legere Reed. This way you can determine how much (if anything) you'd be saving with the purchase of one Legere Reed over the production cost
-            of 8 cane reeds.</h6>
+          <h6>As Legere boasts a life expectancy of several months per synthetic reed, we've set up the table above to compare
+            your total cost of producing eight cane reeds , or approximately two months of cane reeds, with the purchase price of one Legere Reed.
+            Notice that the table is feeding your "Total Cost" number as determined in the first table and multiplying it by an interval
+            of however many reeds you think you'd be saving by purchasing a Legere Reed. Once you've input your number, you can see just how much (if anything) you'd be saving with the purchase of one Legere Reed over the production cost
+            of 2 months of cane reeds. You can also play around with the number of reeds in the second table to find where your "break even" point would be on a Legere Reed.</h6>
           <h6>* As an Amazon Associate I earn from qualifying purchases.</h6>
         </div>
   <div id="left-box">
@@ -1058,6 +1057,12 @@ iframe {
          fontFamily: "Raleway",
          color:'black',
        },
+       valueText = {
+         fontSize:14,
+         fontFamily: "Raleway",
+         color:'green',
+         fontWeight: 600,
+       },
        sText = {
          fontSize:13,
          fontFamily: "Raleway",
@@ -1082,6 +1087,13 @@ iframe {
          fontSize:14,
          color: 'red',
          fontFamily: "Raleway",
+       },
+       badText = {
+         fontSize:14,
+         color: 'red',
+         fontFamily: "Raleway",
+         fontWeight: 600,
+         direction: 'ltr',
        };
 
 
@@ -1300,11 +1312,11 @@ iframe {
           </div>
           <div style={legereUnit}>
            <div style={answerText} maxLength='7'>&nbsp;&nbsp;${this.state.input13}</div>&nbsp;
-           <div style={legereSText}>:Cost of Legere Reed</div>
+           <div style={legereSText}>:Cost of One Legere Reed</div>
           </div>
           <div style={legereUnit3}>
-           <div style={answerText}>${savingsPerLegere}</div>
-           &nbsp;<div style={sText}>:Savings per Legere Reed</div>
+           <div style={(savingsPerLegere >= 0)?valueText:badText}>${savingsPerLegere}</div>
+           &nbsp;<div style={(savingsPerLegere >= 0)?valueText:badText}>{(savingsPerLegere >= 0)?'Savings per Legere Reed':'Loss on Legere Purchase'}</div>
           </div>
         </div>
        </div>
