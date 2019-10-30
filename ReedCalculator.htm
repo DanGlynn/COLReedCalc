@@ -60,6 +60,14 @@ height:auto;
   align-items: center;
 }
 
+#legereMoneyPic {
+  display: inherit;
+  height:100%;
+  width: 100%;
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+}
+
 #inner-tab-container{
   display: flex;
   height: 100%;
@@ -73,7 +81,6 @@ height:auto;
 	line-height: 28px;
 	margin: auto;
 	background: rgba(238, 233, 233, 0.7);
-	padding: 35px 50px 35px 50px;
 	border: 1px solid black;
 	text-align: left;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -189,6 +196,7 @@ h4 {
 h6 {
 	font-size: 18px;
     font-family: 'Raleway', sans-serif;
+    padding: 35px 50px 35px 50px;
 }
 
 #inner-tab-container p{
@@ -375,21 +383,7 @@ iframe {
 
  }
  @media only screen and (max-width: 580px) {
-    #quote-box {
-      display: flex;
-      flex-wrap: wrap;
-      width: 225px;
-      height: auto;
-      padding: 20px 5px;
-      margin:auto;
-    }
 
-    #quote-box .buttons .button#new-quote {
-      float: right;
-      height: 36px;
-      width: auto;
-      margin-right: 8px;
-    }
     h3 {
       font-size:25px;
     }
@@ -397,8 +391,11 @@ iframe {
         text-indent:0px;
     }
     #inner-tab-container{
-        padding: 35px 10px 35px 10px;
         text-align: left;
+    }
+    #legereMoneyPic{
+      padding: 0;
+      border: 2px solid #333;
     }
     #inner-tab-container p{
         font-size: 24px;
@@ -795,10 +792,12 @@ iframe {
     <a href="Lessons"><img src="COL logo.png" alt="Sorry no image" style="display:block; z-index: 2; margin-left:auto;margin-right:auto;margin-top:148px;margin-bottom: 40px;width:300px;height:auto;max-width:100%"></a>
   </div>
         <h3>Legere Oboe Reed - Is it worth it?</h3>
-        <h4>Evaluating Legere's Price Point from a Professional Oboists' Perspective<br><br>
-          by Daniel Glynn</h4>
+        <h4>by Daniel Glynn</h4>
 
-        <div id="inner-tab-container" style="padding-bottom:5vh;">
+        <div id="inner-tab-container" >
+          <a href="https://www.amazon.com/LEGERE-EUROPEAN-SCRAPE-MEDIUM-SOFT/dp/B079WGNQ3V/ref=as_li_ss_il?keywords=legere+oboe+reed&qid=1571850738&sr=8-2&linkCode=li2&tag=chicagooboele-20&linkId=c0b341002a8038cfba053d7702833421&language=en_US" target="_blank">
+            <img src="https://www.chicagooboelessons.com/LegereBill.jpg" id="legereMoneyPic">
+          </a>
           <h6 class="tab">With Legere now offering a
             <div class="tooltip">
               <span class="tooltiptext">Paid Amazon Link</span>
