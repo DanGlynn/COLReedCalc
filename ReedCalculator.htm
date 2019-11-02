@@ -104,7 +104,7 @@ height:auto;
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 180px;
+  width: 130px;
   background-color: #47476b;
   color: #fff;
   text-align: center;
@@ -120,7 +120,7 @@ height:auto;
 .tooltip:hover .tooltiptext {
   visibility: visible;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
 }
 .tooltip .tooltiptext::after {
   content: "";
@@ -197,6 +197,11 @@ h6 {
 	font-size: 18px;
     font-family: 'Raleway', sans-serif;
     padding: 35px 50px 35px 50px;
+}
+.footnote {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  padding: 35px 50px 35px 50px;
 }
 
 #inner-tab-container p{
@@ -800,7 +805,7 @@ iframe {
           <h6 class="tab">With Legere now offering a
             <div class="tooltip">
               <span class="tooltiptext">Paid Amazon Link</span>
-            <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Quality Synthetic Oboe Reed,</b></a>
+            <a href="https://amzn.to/2VMrL1D" target="_blank"><b>Quality Synthetic Oboe Reed*,</b></a>
             </div>
              professionals everywhere are taking a closer look at this high-end plastic alternative and its hefty $120 price point.
              In order to help the professional oboist make a more informed purchase, we went ahead and put together a few tools to determine one's actual reed-production cost, while also comparing this cost
@@ -811,8 +816,7 @@ iframe {
             calculate and total the "cost per reed" of items such as one's tube cane, thread, reed knife, and gouger. Notice how the "Total Cost" and subtotals below update
              as one's expenses are entered.
             Since we're summing up the total cost of producing a reed from scratch, we've also
-            factored in the reed-maker's labor which requires an hourly rate to be entered. <i>Please note that when constructing the table below, the decision was made to exclude the cost of one's gouger(s) and shaper tip(s) as
-            their inclusion would only slightly increase production cost per reed over a lifetime of reed-making.</i>
+            factored in the reed-maker's labor which requires an hourly rate to be entered.**
           </h6>
           <div id="reedCalc">
           </div>
@@ -842,11 +846,12 @@ iframe {
              you are still saving around $117 per purchase and several hours of your time versus making those "good but not great" reeds out of cane.
            </h6>
            <h6 class="tab">
-             If you enjoyed the article or you feel there is some aspect of this product left undiscussed, please leave me a message on our <a href="Lessons" target="_self"><b>Contact Page</b></a> and I'll do my best to get back to you as quickly as possible. 
+             If you enjoyed the article or you feel there is some aspect of this product left undiscussed, please leave me a message on our <a href="Lessons" target="_self"><b>Contact Page</b></a> and I'll do my best to get back to you as quickly as possible.
           </h6>
            <a href="https://www.amazon.com/LEGERE-EUROPEAN-SCRAPE-MEDIUM-SOFT/dp/B079WGNQ3V/ref=as_li_ss_il?keywords=legere+oboe+reed&qid=1571850738&sr=8-2&linkCode=li2&tag=chicagooboele-20&linkId=c0b341002a8038cfba053d7702833421&language=en_US" target="_blank">
            <img class ="legere-image" src="https://chicagooboelessons.com/LegereCase.jpg" border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B079WGNQ3V&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=chicagooboele-20&language=en_US" ></a>
-           <h6 style="margin-top:180px">* As an Amazon Associate I earn from qualifying purchases.</h6>
+           <div class ="footnote" style="margin-top:180px">* As an Amazon Associate I earn from qualifying purchases.<br>**When constructing the table below, the decision was made to exclude the cost of one's gouger(s) and shaper tip(s) as
+           their inclusion would only slightly increase production cost per reed over a lifetime of reed-making.</div>
         </div>
   <div id="left-box">
   </div>
@@ -1070,6 +1075,7 @@ iframe {
          fontFamily: 'Raleway',
          fontWeight: 400,
        },
+
        preHover = {
  	       fontSize: 18,
          fontFamily: 'Raleway',
