@@ -1068,11 +1068,24 @@ iframe {
        },
 
        h6 = {
- 	      fontSize: 18,
+ 	       fontSize: 18,
          fontFamily: 'Raleway',
          fontWeight: 400,
        },
-
+       preHover = {
+ 	       fontSize: 18,
+         fontFamily: 'Raleway',
+         fontWeight: 600,
+         color: '#333333',
+       },
+       hoverText = {
+ 	      fontSize: 18,
+         fontFamily: 'Raleway',
+         fontWeight: 600,
+         cursor: 'pointer',
+         textDecoration: 'underline',
+         color: '#333333',
+       },
 
        titleText = {
          fontSize:19,
@@ -1137,7 +1150,7 @@ iframe {
        input2: 20,
        input3: 5,
        input4: 50,
-       input5: 95,
+       input5: 100,
        input6: 30,
        input7: 6,
        input8: 133,
@@ -1146,6 +1159,8 @@ iframe {
        input11: 8.25,
        input12: 8,
        input13: 120,
+       hovered: false,
+       activeText: '',
 
      };
 
@@ -1161,6 +1176,7 @@ iframe {
      this.laborHours=this.laborHours.bind(this);
      this.hourlyWage=this.hourlyWage.bind(this);
      this.caneMultiplier=this.caneMultiplier.bind(this);
+     this.toggleHover = this.toggleHover.bind(this);
 
    }
    //regex to remove '$'  - this.state.input.replace(/[^0-9.]/g, '')
@@ -1224,6 +1240,13 @@ iframe {
        input12:event.target.value.replace(/[^0-9.]/g,''),
      })
    }
+   toggleHover(id){
+        this.setState({
+          hovered:!this.state.hovered,
+          activeText:id
+
+        })
+       }
    render() {
 
       // if ((typeof(this.state.input) === 'number') && (typeof(this.state.input2) === 'number'))  { var canePerReed = (this.state.input / this.state.input2); canePerReed = Math.round(100 * eval(canePerReed)) / 100; }
@@ -1329,8 +1352,24 @@ iframe {
       </div>
            <div style={tab}>
              <div style={h6}>
-             The table above is set up for a pound of Loree tube cane from Midwest Musical Imports,
-             a Landwell Double Hollow Ground Reed Knife, a Pisoni 47 mm staple, and a Harvard Double Reed gouging machine with a J+2 gouger blade.
+             The table above is set up for a pound of <a href="https://www.mmimports.com/product/oboe-tube-cane-sold-per-1-4lb/" target="_blank"  style={(this.state.activeText.includes('mmImports'))  ? hoverText : preHover}
+           onClick={this.courseOptions}
+           onMouseEnter={() => this.toggleHover('mmImports')}
+           onMouseLeave={() =>this.toggleHover('exit')}
+           id='mmImports'>Loree tube cane from Midwest Musical Imports</a>,
+             a <a href="https://www.mmimports.com/product/landwell-double-hollow-ground-knives/" target="_blank"  style={(this.state.activeText.includes('landwell'))  ? hoverText : preHover}
+           onClick={this.courseOptions}
+           onMouseEnter={() => this.toggleHover('landwell')}
+           onMouseLeave={() =>this.toggleHover('exit')}
+           id='landwell'>Landwell Double Hollow Ground Reed Knife</a>, a <a href="https://www.mmimports.com/product/pisoni-oboe-staples/" target="_blank"  style={(this.state.activeText.includes('pisoni'))  ? hoverText : preHover}
+         onClick={this.courseOptions}
+         onMouseEnter={() => this.toggleHover('pisoni')}
+         onMouseLeave={() =>this.toggleHover('exit')}
+         id='pisoni'>Pisoni 47 mm staple</a>, and a <a href="https://www.harvarddoublereeds.com/products/gouging-blades-oboe/" target="_blank"  style={(this.state.activeText.includes('hdr'))  ? hoverText : preHover}
+       onClick={this.courseOptions}
+       onMouseEnter={() => this.toggleHover('hdr')}
+       onMouseLeave={() =>this.toggleHover('exit')}
+       id='hdr'>Harvard Double Reed Gouger</a> with a J+2 gouger blade.
              The hourly wage is set to our local minimum wage
              so be sure to adjust this appropriately.
              </div>
