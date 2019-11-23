@@ -840,8 +840,8 @@ document.getElementById("main").style.marginLeft= "0";
           <p>The Cost of One Cane Reed</p>
           <h6 class="tab">
             Taking into account all the factors that contribute to the cost of a traditional cane reed, the interactive table below was built to
-            calculate and total the "cost per reed" of items such as one's tube cane, thread, reed knife, and gouger. Notice how the "Total Cost" and subtotals below update
-             as one's expenses are entered.
+            calculate and total the "cost per reed" of items such as one's tube cane, thread, reed knife, and gouger. Notice how the "Total Cost" and subtotals conveniently update
+             as you enter your various expenses.
             Since we're summing up the total cost of producing a reed from scratch, we've also
             factored in the reed-maker's labor which requires an hourly rate to be entered.**
           </h6>
@@ -851,23 +851,23 @@ document.getElementById("main").style.marginLeft= "0";
 
           <p>Analysis</p>
           <h6 class="tab">
-            With my traditional reed production cost calculated above around $36, I found that the Legere Reed only needs a life expectancy of
-            4 cane reeds in order to justify its $120 price point. If I were to completely switch over to the Legere Reed (discontinue making cane reeds altogether),
-            I'd be saving $167 every two months <strong>assuming the synthetic reed only lasts around eight weeks.</strong>
+            With my traditional reed production cost calculated above around $28, I found that the Legere Reed only needs a life expectancy of
+            just over 4 cane reeds in order to justify its $120 price point. If I were to completely switch over to the Legere Reed (discontinue making cane reeds altogether),
+            I'd be saving over $100 every two months <strong>assuming the synthetic reed only lasts around eight weeks.</strong>
             It's important to remember that Legere claims that the reed will last "several months" so it's likely to last much longer than 8 weeks. Even at this conservative 8-week life expectancy, this reed is more than paying for itself
-            when compared to the money saved over making those reeds out of cane.
+            when compared to the money saved by not having to make those reeds out of cane.
           </h6>
           <h6 class="tab">
             While it would be great to be able to switch over completely, it's possible that some might not feel comfortable using the synthetic reed for high profile public performances. The lack of customization could feel limiting in an orchestral environment where
             professionals regularly need to produce a certain type of reed for a specific performance or task, often having to then adjust the reed for artistic reasons multiple times throughout the work week.
             So let's say that a player is only looking to practice on the reed at home while also playing it in some
             orchestra tuttis or pops concerts, thereby saving their favorite cane reeds for their more exposed
-            performing. If the Legere Reed is only used for at-home practice and tuttis, that player is still saving around $167 and several hours of time by not having to make those eight "practice" reeds.
+            performing. If the Legere Reed is only used for at-home practice and tuttis, that player is still saving over $100 and several hours of time by not having to make those eight "practice" reeds.
           </h6>
              <p>Conclusion</p>
            <h6 class="tab">After entering a variety of options into the tables above, it's getting harder and harder to envision a scenario where even the most skeptical reed-makers value their time and money
            so little that they would continue on a crusade against a functional synthetic alternative. Worst case scenario, if the Legere Reed is functional but you don't feel comfortable playing it for high profile performances, and it only lasts for the absolute minimum of its supposed life expectancy,
-             you are still saving around $167 per purchase and several hours of your time versus making those "good but not great" reeds out of cane.
+             you are still saving around $100 per purchase and several hours of your time versus making those "good but not great" reeds out of cane.
            </h6>
            <h6 class="tab">
              If you enjoyed the article or you feel there is some aspect of this product left undiscussed, please leave me a message on our <a href="Lessons" target="_self"><b>Contact Page</b></a> and I'll do my best to get back to you as quickly as possible.
@@ -1179,7 +1179,7 @@ document.getElementById("main").style.marginLeft= "0";
        input3: 5,
        input4: 50,
        input5: 100,
-       input6: 30,
+       input6: 60,
        input7: 6,
        input8: 133,
        input9: 80,
@@ -1187,6 +1187,7 @@ document.getElementById("main").style.marginLeft= "0";
        input11: 8.25,
        input12: 8,
        input13: 120,
+       input14: 40,
        hovered: false,
        activeText: '',
 
@@ -1205,6 +1206,7 @@ document.getElementById("main").style.marginLeft= "0";
      this.hourlyWage=this.hourlyWage.bind(this);
      this.caneMultiplier=this.caneMultiplier.bind(this);
      this.toggleHover = this.toggleHover.bind(this);
+     this.reedsPerStaple = this.reedsPerStaple.bind(this);
 
    }
    //regex to remove '$'  - this.state.input.replace(/[^0-9.]/g, '')
@@ -1241,6 +1243,11 @@ document.getElementById("main").style.marginLeft= "0";
     stapleCost(event){
      this.setState({
        input7:event.target.value.replace(/[^0-9.]/g,''),
+     })
+   }
+   reedsPerStaple(event){
+     this.setState({
+       input14:event.target.value.replace(/[^0-9.]/g,''),
      })
    }
     gougerCost(event){
@@ -1290,14 +1297,17 @@ document.getElementById("main").style.marginLeft= "0";
      laborPerReed = Math.round(100 * eval(laborPerReed)) / 100;
      let staplePerReed = this.state.input7;
      staplePerReed = Math.round(100 * eval(staplePerReed)) / 100;
+     let stapleCostPerReed = (this.state.input7 / this.state.input14);
+     stapleCostPerReed = Math.round(100 * eval(stapleCostPerReed))/ 100;
      let totalWithoutLabor = canePerReed + threadPerReed + staplePerReed + knifePerReed + gougerPerReed;
      totalWithoutLabor = Math.round(100 * eval(totalWithoutLabor)) / 100;
-     let totalWithLabor = canePerReed + threadPerReed + knifePerReed + staplePerReed + gougerPerReed + laborPerReed;
+     let totalWithLabor = canePerReed + threadPerReed + knifePerReed + stapleCostPerReed + gougerPerReed + laborPerReed;
      totalWithLabor = Math.round(100 * eval(totalWithLabor)) / 100;
      let caneVersusLegere = (this.state.input12 * totalWithLabor);
      caneVersusLegere = Math.round(100 * eval(caneVersusLegere)) / 100;
      let savingsPerLegere = (caneVersusLegere - this.state.input13);
     savingsPerLegere = Math.round(100 * eval(savingsPerLegere)) / 100;
+
 
 
 
@@ -1346,6 +1356,14 @@ document.getElementById("main").style.marginLeft= "0";
          <div style={unit}>
            <input value={this.state.input7} onChange={this.stapleCost} style={inputBox} size={6} maxLength='5' />&nbsp;$&nbsp;
            <div style={sText}>:Cost of Staple</div>
+         </div>
+         <div style={unit}>
+           <input value={this.state.input14} onChange={this.reedsPerStaple} style={inputBox} size={6} maxLength='5' />&nbsp;$&nbsp;
+           <div style={sText}>:Reeds per Staple</div>
+         </div>
+         <div style={unit2}>
+           <div style={answerText}>${stapleCostPerReed}</div>
+           &nbsp;<div style={sText}>:Staple Cost per Reed</div>
          </div>
          <div style={unit}>
            <input value={this.state.input8} onChange={this.gougerCost} style={inputBox} size={5} maxLength='6'/>&nbsp;$&nbsp;
@@ -1409,7 +1427,7 @@ document.getElementById("main").style.marginLeft= "0";
            onClick={this.courseOptions}
            onMouseEnter={() => this.toggleHover('faqs')}
            onMouseLeave={() =>this.toggleHover('exit')}
-           id='faqs'>FAQs page</a>, we have set up the second table to compare
+           id='faqs'>FAQs page</a>, we have set up a second table to compare
                your total cost of producing eight cane reeds (representing approximately two months worth of cane reeds) with the purchase price of one Legere Reed.
                Notice how the table below is receiving your "Total Cost" number as determined in the first table and multiplying it by an interval
                of however many reeds you think you would be replacing with the Legere Reed over its life expectancy.  Simply change the number in the input field if you feel 8 reeds is too few or too many and watch the table update.
